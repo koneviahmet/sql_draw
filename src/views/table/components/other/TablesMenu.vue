@@ -10,10 +10,16 @@
         <ChevronDownIcon class="w-5 text-gray-400" v-if="activeTableId == table.id"/>
         <ChevronUpIcon class="w-5 text-gray-400" v-else/>
       </div>
-      <div class="w-full">{{table.name}}</div>
+      <div class="w-full">
+        <input type="text" placeholder="Table Name" v-model="table.name" @keyup.enter="editId = null" class="input input-bordered input-sm w-full" v-if="editId == table.id"/>
+        <div v-else>{{table.name}}</div>
+      </div>
       <div>
-        <div class="hover:bg-gray-300 p-1">
+        <div class="hover:bg-gray-300 p-1" v-if="!editId" @click="editId = table.id">
             <PencilIcon class="w-4 text-gray-400"/>
+          </div>
+          <div class="hover:bg-gray-300 p-1" v-if="editId == table.id" @click="editId = null">
+            <CheckIcon class="w-4 text-green-400"/>
           </div>
       </div>
       <div>
@@ -28,6 +34,8 @@
         </div>
       </div>
     </div>
+
+    <TableDetail :table="table" v-if="activeTableId == table.id"/>
   </div>
 
 
@@ -37,11 +45,13 @@
 
 <script setup>
   import {ref, defineProps, onMounted, computed, watch, defineEmits} from "vue"
-  import { ChevronDownIcon, ChevronUpIcon, DotsVerticalIcon, PencilIcon} from "@heroicons/vue/solid";
-
+  import { ChevronDownIcon, ChevronUpIcon, DotsVerticalIcon, PencilIcon, CheckIcon} from "@heroicons/vue/solid";
+  import TableDetail from './table_detail.vue'
+  
   const props   = defineProps(["tables","activeTableId"])
   const emit    = defineEmits(["active_table"])
   const tables  = ref(props.tables)
+  const editId  = ref(null)
 
   onMounted(() => tablesFilter())
   watch(props, ()=>{

@@ -3,8 +3,8 @@
 
       <div class="flex">
         <!-- left menu -->
-        <div class="min-h-screen relative" :class="isShowLeft ? 'w-6/12' : 'w-0'">
-          <div class="bg-white absolute cursor-pointer bottom-0 right-0 -mr-6 z-50" @click="isShowLeft = !isShowLeft">
+        <div class="min-h-screen relative" :class="isShowLeft ? 'w-6/12' : 'w-0 h-0'">
+          <div class="bg-white absolute cursor-pointer top-0 right-0 -mr-6 z-50" @click="isShowLeft = !isShowLeft">
             <ChevronLeftIcon v-if="isShowLeft" class="w-6"/>
             <ChevronRightIcon v-else class="w-6"/>
           </div>
@@ -22,11 +22,16 @@
           <Tables :tables="tables" @active_table="activeTableId = $event" :selectedActiveTableId="selectedActiveTableId"/>
         </div>
 
-        <div class="min-h-screen relative" :class="isShowRight ? 'w-2/12' : 'w-0'">
-          <div class="bg-white absolute cursor-pointer bottom-0 left-0 -ml-6 z-50" @click="isShowRight = !isShowRight">
+        <div class="min-h-screen relative  bg-white" :class="isShowRight ? 'w-2/12' : 'w-0 h-0'">
+          <div class="bg-white absolute cursor-pointer top-0 left-0 -ml-6 z-50" @click="isShowRight = !isShowRight">
             <ChevronLeftIcon v-if="!isShowRight" class="w-6"/>
-            <ChevronRightIcon v-else class="w-6"/>
+            <ChevronRightIcon v-else class="w-6"/>            
           </div>
+
+          <div>
+            asd
+          </div>
+
         </div>
 
       </div>
@@ -117,27 +122,33 @@ const tables = ref([
         {
           id: 1,
           name: "id",
-          type: "bigint"
+          index_types: 'primary_key',
+          type: "bigint",
+          nullable: false,
         },
         {
           id: 2,
           name: "name",
-          type: "string"
+          type: "string",
+          nullable: true,
         },
         {
           id: 3,
           name: "users_id",
-          type: "string"
+          type: "string",
+          nullable: false,
         },
         {
           id: 4,
           name: "users2_id",
-          type: "string"
+          type: "string",
+          nullable: false,
         },
         {
           id: 5,
           name: "email",
-          type: "string"
+          type: "string",
+          nullable: false,
         }
       ]
     }
@@ -150,7 +161,7 @@ const addTable = () => {
   let newTable =     {
       id: randomId,
       name: `table${randomId}`,
-      color: colors[Math.floor(Math.random() * 62)],
+      color: colors[Math.floor(Math.random() * 54)],
       opacity: '100',
       position: {
         top: Math.floor(Math.random() * 600), 

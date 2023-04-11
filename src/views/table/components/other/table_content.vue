@@ -26,7 +26,7 @@
     >
         <div class="shadow-lg cursor-pointer" :class="`opacity-${table.opacity}`">
             <div class="bg-gray-100">
-                <div class="text-center font-bold p-2" :class="`bg-${table.color}`">{{table.name}}</div>
+                <div class="text-center font-bold p-1 text-sm" :class="`bg-${table.color}`">{{table.name}}</div>
                 <div v-for="column in table.columns" :key="column.id" class="border-t">
                     <div class="flex p-1 items-center justify-center" :class="column.color && `border-l-4 border-${column.color }`">
                         <div><ChevronRightIcon class="w-4 justify-between"/></div>
@@ -48,6 +48,7 @@
     const props = defineProps(["content_size", "table", "z", "setZ"])
     const isActive = ref(true)
     const size = ref({width: 0, height: 0, top: props.table.position.top, left: props.table.position.left, z: props.z})
+    
 
     //content_size ana contentin boyutları
     //size tablo contentinin boyutları ve pozisyonu

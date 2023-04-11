@@ -7,7 +7,6 @@ const colors = [
   'yellow-300',
   'green-300',
   'red-300',
-  'zinc-300',
   'pink-400',
   'purple-400',
   'indigo-400',
@@ -16,7 +15,6 @@ const colors = [
   'yellow-400',
   'green-400',
   'red-400',
-  'zinc-400',
   'pink-500',
   'purple-500',
   'indigo-500',
@@ -25,7 +23,6 @@ const colors = [
   'yellow-500',
   'green-500',
   'red-500',
-  'zinc-500',
   'pink-600',
   'purple-600',
   'indigo-600',
@@ -34,7 +31,6 @@ const colors = [
   'yellow-600',
   'green-600',
   'red-600',
-  'zinc-600',
   'pink-700',
   'purple-700',
   'indigo-700',
@@ -43,7 +39,6 @@ const colors = [
   'yellow-700',
   'green-700',
   'red-700',
-  'zinc-700',
   'pink-800',
   'purple-800',
   'indigo-800',
@@ -52,7 +47,6 @@ const colors = [
   'yellow-800',
   'green-800',
   'red-800',
-  'zinc-800',
   'pink-900',
   'purple-900',
   'indigo-900',
@@ -60,8 +54,7 @@ const colors = [
   'green-900',
   'yellow-900',
   'green-900',
-  'red-900',
-  'zinc-900',
+  'red-900'
 ]
  
   

@@ -1,5 +1,5 @@
 <template>
-<div class="relative bg-gray-300 h-full w-full" ref="drag">
+<div class=" bg-gray-300 h-full w-full fixed" ref="drag">
   
   
   <TableContent v-for="table in tables" :key="table.id" :content_size="{width, height}" :table="table" :z="z" :setZ="setZ"/>
