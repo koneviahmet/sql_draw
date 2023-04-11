@@ -9,6 +9,7 @@ export default createStore({
     user: null,
     saltKey: "haydaHobbaGizliKey!456?",
     schema: [], 
+ dbase: [], 
  table: [],
   },
   mutations: {
@@ -21,6 +22,9 @@ export default createStore({
     },
     addTable(state, table) { 
  state.table = [...table]; 
+}, 
+ addDbase(state, dbase) { 
+ state.dbase = [...dbase]; 
 }, 
  addSchema(state, schema) {
       state.schema = [...schema];
@@ -38,6 +42,7 @@ export default createStore({
     _getCurrentRole: (state) => parseInt(state?.user?.role),
     _saltKey: (state) => state.saltKey,
     _getTable: (state) => state?.table, 
+ _getDbase: (state) => state?.dbase, 
  _getSchema: (state) => state?.schema,
   },
   plugins: [

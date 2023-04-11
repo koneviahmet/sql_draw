@@ -66,6 +66,10 @@ const urlArr = ref([
     title: "Error" 
         },
         {
+            to: "/dbase",
+            title: "Dbase" 
+        },
+        {
             to: "/table",
             title: "Table",
   },

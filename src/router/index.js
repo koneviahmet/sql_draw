@@ -8,11 +8,13 @@ import { userRouters } from "./routers/user.js";
 import { schemaRouters } from "./routers/schema.js";
 import { errorRouters } from "./routers/error.js";
 import { tableRouters } from "./routers/table.js" 
+import { dbaseRouters } from "./routers/dbase.js" 
 //import
 
 const router = createRouter({ 
     routes: [
         ...homeRouters,
+        ...dbaseRouters,
         ...tableRouters,
         ...infoRouters,
         ...userRouters,

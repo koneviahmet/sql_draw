@@ -16,6 +16,15 @@
       "token": 9,
       "role": 2,
       "id": 2
+    },
+    {
+      "email": "koneviahmet@gmail.com",
+      "name": "ahmet",
+      "lastName": "şık",
+      "password": "123456",
+      "token": 1,
+      "role": 2,
+      "id": 3
     }
   ],
   "schema": [
@@ -57,6 +66,12 @@
       "id": 9
     }
   ],
-  "table": [], 
+  "table": [],
+  "dbase": [
+    {
+      "id": 1,
+      "name": "Db 1x"
+    }
+  ],
   "empty": []
 }

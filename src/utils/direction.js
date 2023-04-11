@@ -12,6 +12,12 @@ const directionPageArr = [
       header: false
   },
   {
+    page: "TableHome",
+    menu: false,
+    footer: false,
+    header: false
+  },
+  {
       page: "UserSignIn",
       menu: false
   },

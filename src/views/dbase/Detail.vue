@@ -1,13 +1,13 @@
 <template>
   <div class="my-24 mx-3  bg-base-100 min-h-screen shadow-sm rounded-md">
     <MainMenu v-can="'isAuth'" />
-    loading: {{ tableLoading }} <br />
+    loading: {{ dbaseLoading }} <br />
     <hr class="my-2">
     select data: {{ selectData }} <br /> 
     <hr class="my-2">
-    all data from store: {{ tableData }} <br />
+    all data from store: {{ dbaseData }} <br />
     <hr class="my-2">
-    usersError: {{ tableError }} <br />
+    usersError: {{ dbaseError }} <br />
   </div>
 </template>
 
@@ -15,12 +15,12 @@
 import MainMenu from "./components/menu/MainMenu.vue";
 import { useRoute } from "vue-router";
 import {ref} from "vue"
-import useTable from "../../compositions/useModelTable";
 const route = useRoute();
 const selectData = ref(null);
 
-const { tableLoading, tableData, tableError, getTable } = useTable();
-getTable({ id: route.params.id })
+import useDbase from "../../compositions/useModelDbase";
+const { dbaseLoading, dbaseData, dbaseError, getDbase } = useDbase();
+getDbase({ id: route.params.id })
 .then(response => {
   selectData.value = response;
 })

@@ -28,10 +28,14 @@
             <div class="bg-gray-100">
                 <div class="text-center font-bold p-1 text-sm" :class="`bg-${table.color}`">{{table.name}}</div>
                 <div v-for="column in table.columns" :key="column.id" class="border-t">
-                    <div class="flex p-1 items-center justify-center" :class="column.color && `border-l-4 border-${column.color }`">
-                        <div><ChevronRightIcon class="w-4 justify-between"/></div>
+                    <div class="flex space-x-1 p-1 items-center justify-center" :class="column.color && `border-l-4 border-${column.color }`">
+                        <div>
+                            <KeyIcon class="w-3 justify-between text-gray-300" v-if="column.index_types == 'primary_key'"/>
+                            <FingerPrintIcon class="w-3 justify-between text-gray-300" v-if="column.index_types == 'unique_key'"/>
+                            <InformationCircleIcon class="w-3 justify-between text-gray-300" v-if="column.index_types == 'index'"/>
+                        </div>
                         <div class="w-full text-gray-600">{{ column.name }}</div>
-                        <div class="text-gray-400 text-xs">{{ column.type }}</div>
+                        <div class="text-gray-400 text-2xs min-w-max">{{ column.type }}</div>
                     </div>
                 </div>
             </div>
@@ -42,7 +46,7 @@
 
     
 <script setup>
-    import { ChevronRightIcon, ChevronLeftIcon } from "@heroicons/vue/solid";
+    import { KeyIcon, FingerPrintIcon, InformationCircleIcon} from "@heroicons/vue/solid";
     import {ref, defineProps} from "vue"
     import VueDragResize from 'vue3-drag-resize'
     const props = defineProps(["content_size", "table", "z", "setZ"])

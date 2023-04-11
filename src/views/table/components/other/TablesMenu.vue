@@ -28,14 +28,13 @@
             <DotsVerticalIcon class="w-4 text-gray-400"/>
           </div>
           <ul tabindex="0" class="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52">
-            <li><a>Item 1</a></li>
-            <li><a>Item 2</a></li>
+            <li><a @click="deleteTable(table.id)">Delete</a></li>
           </ul>
         </div>
       </div>
     </div>
 
-    <TableDetail :table="table" v-if="activeTableId == table.id"/>
+    <TableDetail :table="table" v-if="activeTableId == table.id" @delete="deleteColumn" @add="addColumn"/>
   </div>
 
 
@@ -49,7 +48,7 @@
   import TableDetail from './table_detail.vue'
   
   const props   = defineProps(["tables","activeTableId"])
-  const emit    = defineEmits(["active_table"])
+  const emit    = defineEmits(["active_table", "delete"])
   const tables  = ref(props.tables)
   const editId  = ref(null)
 
@@ -58,6 +57,35 @@
     tables.value = [...props.tables]
   })
 
+  const deleteTable = (id) => {
+    emit('delete', id)
+  }
+
+  const deleteColumn = (id) => {
+    const tableIndex = tables.value.findIndex(t => t.id == props.activeTableId)
+    tables.value[tableIndex].columns = tables.value[tableIndex].columns.filter(i => i.id != id)
+  }
+
+  const addColumn = () => {
+    console.log("add column");
+    let randomId = Math.floor(Math.random() * 10000);
+
+    const newColumn = {
+          id: randomId,
+          name: "column",
+          index_types: 'none',
+          type: "string",
+          nullable: false,
+          auto_increment: false,
+          unsigned: false,
+          default_value: "",
+          comment: ""
+        }
+
+    const tableIndex = tables.value.findIndex(t => t.id == props.activeTableId)
+    tables.value[tableIndex].columns = [...tables.value[tableIndex].columns, newColumn]
+
+  }
 
   const tablesFilter = () => {
     return tables.value.map(i => {

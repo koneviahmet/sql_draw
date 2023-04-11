@@ -1,11 +1,11 @@
-const defaultPath = "table";
+const defaultPath = "dbase";
 const defaultPathName =
   defaultPath.charAt(0).toUpperCase() + defaultPath.slice(1);
 
-export const tableRouters = [
+export const dbaseRouters = [
   {
     name: `${defaultPathName}Home`,
-    path: `/${defaultPath}/:id`,
+    path: `/${defaultPath}`,
     component: () => import(`../../views/${defaultPath}/Home.vue`),
   },
   {
