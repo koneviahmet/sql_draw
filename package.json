@@ -12,6 +12,7 @@
     "@tailwindcss/typography": "^0.4.1",
     "@vueuse/core": "^9.13.0",
     "axios": "^0.24.0",
+    "codemirror-editor-vue3": "^2.3.0",
     "daisyui": "^1.16.2",
     "notyf": "^3.10.0",
     "secure-ls": "^1.2.6",

@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-base-100 min-h-screen overflow-hidden">
+  <div class="bg-white">
 
     <div class="flex justify-center items-center w-full h-full">
       <Dbase />

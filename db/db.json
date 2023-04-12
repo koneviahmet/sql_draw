@@ -77,8 +77,8 @@
           "color": "green-200",
           "opacity": 40,
           "position": {
-            "top": 291,
-            "left": 130
+            "top": 285,
+            "left": 202
           },
           "columns": [
             {
@@ -137,8 +137,8 @@
           "color": "indigo-800",
           "opacity": 100,
           "position": {
-            "top": 87,
-            "left": 134
+            "top": 70,
+            "left": 201
           },
           "columns": [
             {
@@ -196,352 +196,12 @@
     },
     {
       "dbase_id": "2",
-      "tables": [
-        {
-          "dbase_id": 1,
-          "id": 2060,
-          "name": "table",
-          "color": "green-200",
-          "opacity": 100,
-          "position": {
-            "top": 75,
-            "left": 92
-          },
-          "columns": [
-            {
-              "id": 1,
-              "name": "id",
-              "index_types": "primary_key",
-              "type": "bigint",
-              "nullable": true,
-              "auto_increment": true,
-              "unsigned": true,
-              "default_value": "",
-              "comment": "",
-              "color": null
-            },
-            {
-              "id": 8745,
-              "name": "new_table_id",
-              "index_types": "none",
-              "type": "bigint",
-              "nullable": true,
-              "auto_increment": false,
-              "unsigned": false,
-              "default_value": "",
-              "comment": "",
-              "color": "purple-800"
-            },
-            {
-              "id": 2911,
-              "name": "column",
-              "index_types": "none",
-              "type": "string",
-              "nullable": false,
-              "auto_increment": false,
-              "unsigned": false,
-              "default_value": "",
-              "comment": "",
-              "color": null
-            },
-            {
-              "id": 139,
-              "name": "cafer_id",
-              "index_types": "none",
-              "type": "string",
-              "nullable": false,
-              "auto_increment": false,
-              "unsigned": false,
-              "default_value": "",
-              "comment": "",
-              "color": "pink-900"
-            }
-          ]
-        },
-        {
-          "id": 87,
-          "name": "cafer",
-          "color": "pink-900",
-          "opacity": 100,
-          "position": {
-            "top": 674,
-            "left": 153
-          },
-          "columns": [
-            {
-              "id": 87,
-              "name": "id",
-              "index_types": "primary_key",
-              "type": "bigint",
-              "nullable": false,
-              "auto_increment": true,
-              "unsigned": true,
-              "default_value": "",
-              "comment": "",
-              "color": null
-            }
-          ]
-        },
-        {
-          "id": 58,
-          "name": "new_table",
-          "color": "purple-800",
-          "opacity": 100,
-          "position": {
-            "top": 403,
-            "left": 63
-          },
-          "columns": [
-            {
-              "id": 58,
-              "name": "id",
-              "index_types": "primary_key",
-              "type": "bigint",
-              "nullable": false,
-              "auto_increment": true,
-              "unsigned": true,
-              "default_value": "",
-              "comment": "",
-              "color": null
-            }
-          ]
-        },
-        {
-          "id": 78,
-          "name": "new_table",
-          "color": "purple-800",
-          "opacity": 100,
-          "position": {
-            "top": 711,
-            "left": 416
-          },
-          "columns": [
-            {
-              "id": 78,
-              "name": "id",
-              "index_types": "primary_key",
-              "type": "bigint",
-              "nullable": false,
-              "auto_increment": true,
-              "unsigned": true,
-              "default_value": "",
-              "comment": "",
-              "color": null
-            }
-          ]
-        },
-        {
-          "id": 70,
-          "name": "new_table",
-          "color": "pink-500",
-          "opacity": 100,
-          "position": {
-            "top": 35,
-            "left": 533
-          },
-          "columns": [
-            {
-              "id": 70,
-              "name": "id",
-              "index_types": "primary_key",
-              "type": "bigint",
-              "nullable": false,
-              "auto_increment": true,
-              "unsigned": true,
-              "default_value": "",
-              "comment": "",
-              "color": null
-            }
-          ]
-        },
-        {
-          "id": 10,
-          "name": "new_table",
-          "color": "pink-900",
-          "opacity": 100,
-          "position": {
-            "top": 485,
-            "left": 784
-          },
-          "columns": [
-            {
-              "id": 10,
-              "name": "id",
-              "index_types": "primary_key",
-              "type": "bigint",
-              "nullable": false,
-              "auto_increment": true,
-              "unsigned": true,
-              "default_value": "",
-              "comment": "",
-              "color": null
-            },
-            {
-              "id": 8444,
-              "name": "cafer_id",
-              "index_types": "none",
-              "type": "string",
-              "nullable": false,
-              "auto_increment": false,
-              "unsigned": false,
-              "default_value": "",
-              "comment": "",
-              "color": "pink-900"
-            }
-          ]
-        },
-        {
-          "id": 33,
-          "name": "new_table",
-          "color": "purple-700",
-          "opacity": 100,
-          "position": {
-            "top": 239,
-            "left": 838
-          },
-          "columns": [
-            {
-              "id": 33,
-              "name": "id",
-              "index_types": "primary_key",
-              "type": "bigint",
-              "nullable": false,
-              "auto_increment": true,
-              "unsigned": true,
-              "default_value": "",
-              "comment": "",
-              "color": null
-            }
-          ]
-        }
-      ],
+      "tables": [],
       "id": 2
     },
     {
       "dbase_id": "4",
-      "tables": [
-        {
-          "dbase_id": 1,
-          "id": 61350,
-          "name": "table",
-          "color": "green-200",
-          "opacity": 100,
-          "position": {
-            "top": 36,
-            "left": 836
-          },
-          "columns": [
-            {
-              "id": 1,
-              "name": "id",
-              "index_types": "primary_key",
-              "type": "bigint",
-              "nullable": false,
-              "auto_increment": true,
-              "unsigned": true,
-              "default_value": "",
-              "comment": "",
-              "color": null
-            }
-          ]
-        },
-        {
-          "id": 81,
-          "name": "new_table",
-          "color": "indigo-900",
-          "opacity": 100,
-          "position": {
-            "top": 532,
-            "left": 605
-          },
-          "columns": [
-            {
-              "id": 81,
-              "name": "id",
-              "index_types": "primary_key",
-              "type": "bigint",
-              "nullable": false,
-              "auto_increment": true,
-              "unsigned": true,
-              "default_value": "",
-              "comment": "",
-              "color": null
-            }
-          ]
-        },
-        {
-          "id": 1,
-          "name": "new_table",
-          "color": "yellow-700",
-          "opacity": 100,
-          "position": {
-            "top": 173,
-            "left": 1072
-          },
-          "columns": [
-            {
-              "id": 1,
-              "name": "id",
-              "index_types": "primary_key",
-              "type": "bigint",
-              "nullable": false,
-              "auto_increment": true,
-              "unsigned": true,
-              "default_value": "",
-              "comment": "",
-              "color": null
-            }
-          ]
-        },
-        {
-          "id": 86,
-          "name": "new_table",
-          "color": "green-300",
-          "opacity": 100,
-          "position": {
-            "top": 78,
-            "left": 112
-          },
-          "columns": [
-            {
-              "id": 86,
-              "name": "id",
-              "index_types": "primary_key",
-              "type": "bigint",
-              "nullable": false,
-              "auto_increment": true,
-              "unsigned": true,
-              "default_value": "",
-              "comment": "",
-              "color": null
-            }
-          ]
-        },
-        {
-          "id": 0,
-          "name": "new_table",
-          "color": "purple-400",
-          "opacity": 100,
-          "position": {
-            "top": 357,
-            "left": 135
-          },
-          "columns": [
-            {
-              "id": 0,
-              "name": "id",
-              "index_types": "primary_key",
-              "type": "bigint",
-              "nullable": false,
-              "auto_increment": true,
-              "unsigned": true,
-              "default_value": "",
-              "comment": "",
-              "color": null
-            }
-          ]
-        }
-      ],
+      "tables": [],
       "id": 3
     },
     {
@@ -575,6 +235,11 @@
     {
       "isTrusted": true,
       "id": 11
+    },
+    {
+      "dbase_id": "3",
+      "tables": [],
+      "id": 12
     }
   ],
   "dbase": [
