@@ -2,7 +2,7 @@
   <div class="bg-base-100 min-h-screen overflow-hidden">
 
     <div class="flex justify-center items-center w-full h-full">
-      <router-link class="btn" to="/table/1">Table1</router-link>
+      <Dbase />
     </div>
     
   </div>
@@ -11,6 +11,6 @@
 
 
 <script setup>
-
+import Dbase from './dbase/Home.vue'
 
 </script>

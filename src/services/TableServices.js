@@ -15,7 +15,8 @@ const TableServices = {
   },
   getItem: async (obj) => {
     try {
-      const response = await http.get(`/table/${obj.id}`);
+      // const response = await http.get(`/table/${obj.id}`);
+      const response = await http.get(`/table?dbase_id=${obj.dbase_id}`);
       return response?.data;
     } catch (e) {}
   },

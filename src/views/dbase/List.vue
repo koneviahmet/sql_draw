@@ -1,6 +1,5 @@
 <template>
-  <div class="my-24 mx-3 bg-base-100 min-h-screen shadow-sm rounded-md">
-  <MainMenu v-can="'isAuth'" />
+  <div>
 
   <Skeletor :loading="dbaseLoading" :length="4"/>
 
@@ -15,17 +14,14 @@
 
   <div class="overflow-x-auto p-4">
     <table class="table w-full">
-      <thead>
-        <tr>
-          <th>ITEM</th> 
-          <th>OPTIONS</th>
-        </tr>
-      </thead> 
       <tbody>
         <tr v-for="item in dbaseData" :key="item.id">
-          <th>{{item.id}}</th> 
+          <th class="w-full">
+            <router-link :to="`/table/${item.id}`">{{item.id}} {{item.name}}</router-link>
+          </th> 
+
           <td class="flex space-x-1">
-            <router-link :to="`/dbase/detail/${item.id}`" class="btn btn-sm">Select</router-link>
+            <button  class="btn btn-sm" @click="selected(item.id)">Update</button>
             <a class="btn btn-error btn-sm" @click="itemDelete(item)" :class="dbaseLoading && 'loading btn-disabled'">Delete</a>    
           </td> 
         </tr>
@@ -38,17 +34,20 @@
 </template>
 
 <script setup>
-import { getCurrentInstance, reactive, onMounted } from "vue";
-const app = getCurrentInstance();
-import MainMenu from "./components/menu/MainMenu.vue";
+import { getCurrentInstance, reactive, onMounted, defineEmits } from "vue";
 import { notyfError, notyfSuccess } from "../../utils/notyf.js";
 import Skeletor from "../../utils/skeletor/skeletor1.vue"
-
+import Alert from "../../utils/alert.js";
 import useDbase from "../../compositions/useModelDbase";
 const { dbaseLoading, dbaseData, dbaseError, getDbases, deleteDbase } = useDbase();
+const app = getCurrentInstance();
+const emit = defineEmits(["id"])
 onMounted(() => getDbases());
 
-import Alert from "../../utils/alert.js";
+
+const selected = (id) => {
+  emit("id", id)
+}
 
 const itemDelete = (item) => {
   deleteDbase(item)

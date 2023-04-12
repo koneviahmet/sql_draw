@@ -1,6 +1,6 @@
 <template>
   <div class=" bg-gray-300 h-full w-full fixed" ref="drag">
-    <TableContent v-for="table in tables" :key="table.id" :content_size="{width, height}" :table="table" :z="z" :setZ="setZ"/>
+    <TableContent v-for="table in tables" @drag="dragFnc" :key="table.id" :content_size="{width, height}" :table="table" :z="z" :setZ="setZ"/>
   </div>
   </template>
   
@@ -10,7 +10,7 @@
     import { useElementSize } from '@vueuse/core'
     import TableContent from "./components/other/table_content.vue"
     const props = defineProps(["tables","selectedActiveTableId"])
-    const emit = defineEmits(["active_table"])
+    const emit = defineEmits(["active_table", "drag"])
     const drag = ref(null)
     const tables = ref(props.tables)
     const { width, height } = useElementSize(drag)
@@ -32,14 +32,16 @@
     watch(props, (currentProps)=>{
       if (currentProps.selectedActiveTableId != activeTableId.value) {
         activeTableId.value = currentProps.selectedActiveTableId
-  
         tablesFilter()
       }
     })
   
-  
-  
     onMounted(() => tablesFilter())
+
+
+    const dragFnc = (size) => {
+      emit('drag', size)
+    }
     
     const tablesFilter = () => {
       return tables.value.map(i => {

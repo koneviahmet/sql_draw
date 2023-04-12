@@ -1,6 +1,6 @@
 <template> 
   <div class="m-4">
-    <form class="w-full max-w-sm">
+    <form class="w-full">
       <div class="alert alert-error my-4" v-if="dbaseError">
         <div class="flex-1">
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="w-6 h-6 mx-2 stroke-current">    
@@ -50,7 +50,8 @@ export default {
                 !validateSuccess.valid && console.log("Check the form.", errors.value) 
                 if(validateSuccess.valid){
                     addDbase({...values}).then(response => {
-                        router.push(`/dbase/detail/${response.id}`)
+                        // router.push(`/dbase/detail/${response.id}`)
+                        values.name = ""
                     })
                 }
             }).catch(validateError => {

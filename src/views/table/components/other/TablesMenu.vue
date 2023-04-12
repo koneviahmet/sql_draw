@@ -15,10 +15,11 @@
         <div v-else>{{table.name}}</div>
       </div>
       <div>
+  
         <div class="hover:bg-gray-300 p-1" v-if="!editId" @click="editId = table.id">
             <PencilIcon class="w-4 text-gray-400"/>
           </div>
-          <div class="hover:bg-gray-300 p-1" v-if="editId == table.id" @click="editId = null">
+          <div class="hover:bg-gray-300 p-1" v-if="table.id && editId == table.id" @click="editId = null">
             <CheckIcon class="w-4 text-green-400"/>
           </div>
       </div>

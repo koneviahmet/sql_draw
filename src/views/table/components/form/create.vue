@@ -40,17 +40,20 @@ import useTable from '../../../../compositions/useModelTable'
 
 
 export default {
-    setup(){ 
+    props: ["data"],
+    setup(props){ 
         const {validate, errors, values} = useCreate();
         const router = useRouter();
         const {tableLoading, tableError, addTable} = useTable();
        
+        
         const save = () => {
             validate().then(validateSuccess => {
                 !validateSuccess.valid && console.log("Check the form.", errors.value) 
                 if(validateSuccess.valid){
-                    addTable({...values}).then(response => {
-                        router.push(`/table/detail/${response.id}`)
+                    addTable({...props.data}).then(response => {
+                      console.log("kaydedildi");
+                        // router.push(`/table/detail/${response.id}`)
                     })
                 }
             }).catch(validateError => {

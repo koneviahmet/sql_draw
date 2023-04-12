@@ -8,6 +8,5 @@
 
 <script setup>
 import MainMenu from "./components/menu/MainMenu.vue";
-import formCreate from "./components/form/create.vue";
 </script>
 

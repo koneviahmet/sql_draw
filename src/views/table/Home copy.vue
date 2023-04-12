@@ -1,78 +1,124 @@
 <template>
-<div class="relative bg-gray-300 h-full w-full" ref="drag">
+  <div class="bg-base-100 min-h-screen overflow-hidden">
 
-  <div>
-    <button @click="isActive = !isActive">{{ !isActive ? 'active' : 'passive' }}</button>
-  </div>
-  <!-- 
-    parentLimitation -> parentin dışına çıkamasın demek
-    preventActiveBehavior -> metinleri seçebileyim demek
-    :aspectRatio="true" -> oranlı büyüsün demek
-    :snapToGrid="true" :gridY="20" :gridX="20" -> gridler halinde ilerlesin demek
-    w, h, minw, minh, x, y, z 
-    z -> z-index
-    :stickSize="5" -> boyutlandırma kutucuklarının boyutunu belirler
-    :sticks =" ['tm','bm','ml','mr'] -> boyutlandırma kısıtlaması yapar
-    axis="x" -> hareket eksenini belirler
-   -->
-  <vue-drag-resize class=""  
-        :isActive="isActive" 
-        :isDraggable="isActive" 
-        :isResizable="!isActive" 
-        :preventActiveBehavior="!isActive"
-        :parentLimitation="true"
-        :w="200"
-        :h="'auto'"
-        :x="110"
-        :y="150"
-        :z="10"
-        @resizing="resize" 
-        @dragging="resize"
-      >
-        <div class="bg-red-200 pt-2 shadow-lg" :class="isActive && 'cursor-pointer'">
-         <!-- <h3>Hello World! <br> {{ width }} {{ height }}</h3>
-          <p>{{ top }} х {{ left }} </p>
-          <p>{{ widthx }} х {{ heightx }}</p> -->
-          
-          <div class="bg-gray-100">
-              <h3>Hello World! <br> {{ width }} {{ height }}</h3>
-              <p>{{ top }} х {{ left }} </p>
-              <p>{{ widthx }} х {{ heightx }}</p>
-              <button class="btn btn-sm">Aç</button>
-              <div>
-                <div v-for="i in 5" :key="i" class="border-t">{{ i }}</div>
-              </div>
+      <div class="flex">
+        <!-- left menu -->
+        <div class="min-h-screen relative" :class="isShowLeft ? 'w-4/12' : 'w-0 h-0'">
+          <div class="bg-white absolute cursor-pointer top-0 right-0 -mr-6 z-50" @click="isShowLeft = !isShowLeft">
+            <ChevronLeftIcon v-if="isShowLeft" class="w-6"/>
+            <ChevronRightIcon v-else class="w-6"/>
+          </div>
 
+          <div class="flex justify-between p-2 border-b">
+            <div><router-link class="btn btn-sm" to="/">Home</router-link></div>
+            <div><button class="btn btn-sm" @click="addTable">+Table</button></div>
+          </div>
+
+          <TablesMenu :tables="tables" :activeTableId="activeTableId" @delete="deleteTable" @active_table="activeTableId = $event"/>
+          <div class="h-48"></div>
+        </div>
+    
+        <!--table content -->
+        <div class="w-full min-h-screen bg-red-200">
+          <Tables :tables="tables" @active_table="activeTableId = $event" :selectedActiveTableId="selectedActiveTableId"/>
+        </div>
+
+        <div class="min-h-screen relative  bg-white" :class="isShowRight ? 'w-2/12' : 'w-0 h-0'">
+          <div class="bg-white absolute cursor-pointer top-0 left-0 -ml-6 z-50" @click="isShowRight = !isShowRight">
+            <ChevronLeftIcon v-if="!isShowRight" class="w-6"/>
+            <ChevronRightIcon v-else class="w-6"/>            
+          </div>
+
+          <!--right content-->
+          <div>
+            asd {{ activeTableId }}
           </div>
 
         </div>
 
-  </vue-drag-resize>
+      </div>
 
-</div>
-
+  </div>
 </template>
 
+
 <script setup>
-    import {ref} from "vue"
-    import VueDragResize from 'vue3-drag-resize'
-    import { useElementSize } from '@vueuse/core'
-    const drag = ref(null)
-    const { width, height } = useElementSize(drag)
-    const isActive = ref(true)
+import {ref, onMounted, watch} from 'vue'
+import { useRoute } from "vue-router";
+import { ChevronRightIcon, ChevronLeftIcon } from "@heroicons/vue/solid";
+import Tables from "./Tables.vue"
+import TablesMenu from "./components/other/TablesMenu.vue"
+import colors  from '../../env/colors.js';
+const route = useRoute();
+const table_id = route.params.id
+const data  = []
+const isShowLeft = ref(false)
+const isShowRight = ref(false)
+const activeTableId = ref(0)
+const selectedActiveTableId = ref(0)
 
-    const  widthx = ref(0);
-    const  heightx = ref(0);
-    const  top  = ref(0);
-    const  left = ref(0);
 
-    const resize = (newRect) => {
-  
-      console.log(width.value, height.value)
+const tables = ref([
+  {
+    id: 1,
+    name: "table",
+    color: "green-200",
+    opacity: '100',
+    position: {top: 200, left: 100},
+    columns: [
+      {
+        id: 1,
+        name: "id",
+        index_types: 'primary_key',
+        type: "bigint",
+        nullable: false,
+        auto_increment: true,
+        unsigned: true,
+        default_value: "",
+        comment: ""
+      }
+    ]
+  }
+])
 
-      widthx.value = newRect.width;
-      heightx.value = newRect.height;
-      top.value = newRect.top;
-      left.value = newRect.left;
+onMounted(() => isShowLeft.value = true)
+watch(activeTableId, (currentActiveTableId) => selectedActiveTableId.value = currentActiveTableId)
+watch(tables, (currentTables) => {
+  console.log("tables => değişti");
+}, {deep: true});
+
+
+const deleteTable = (id) => {
+  tables.value = [...tables.value.filter(i => i.id != id)]
+}
+
+
+const addTable = () => {
+  let randomId = Math.floor(Math.random() * 100);
+  let newTable =     {
+      id: randomId,
+      name: `new_table`,
+      color: colors[Math.floor(Math.random() * 54)],
+      opacity: '100',
+      position: {
+        top: Math.floor(Math.random() * 600), 
+        left: Math.floor(Math.random() * 800)
+      },
+      columns: [
+        {
+          id: randomId,
+          name: "id",
+          index_types: 'primary_key',
+          type: "bigint",
+          nullable: false,
+          auto_increment: true,
+          unsigned: true,
+          default_value: "",
+          comment: ""
+        }
+      ]
     }
+  tables.value = [...tables.value, newTable]
+}
+
 </script>

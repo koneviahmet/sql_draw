@@ -66,11 +66,589 @@
       "id": 9
     }
   ],
-  "table": [],
+  "table": [
+    {
+      "dbase_id": "1",
+      "tables": [
+        {
+          "dbase_id": 1,
+          "id": 86064,
+          "name": "table 1 olaca",
+          "color": "green-200",
+          "opacity": 100,
+          "position": {
+            "top": 711,
+            "left": 1129
+          },
+          "columns": [
+            {
+              "id": 1,
+              "name": "id",
+              "index_types": "primary_key",
+              "type": "bigint",
+              "nullable": false,
+              "auto_increment": true,
+              "unsigned": true,
+              "default_value": "",
+              "comment": "",
+              "color": null
+            }
+          ]
+        },
+        {
+          "id": 57,
+          "name": "new_table",
+          "color": "indigo-700",
+          "opacity": 100,
+          "position": {
+            "top": 402,
+            "left": 100
+          },
+          "columns": [
+            {
+              "id": 57,
+              "name": "id",
+              "index_types": "primary_key",
+              "type": "bigint",
+              "nullable": false,
+              "auto_increment": true,
+              "unsigned": true,
+              "default_value": "",
+              "comment": "",
+              "color": null
+            }
+          ]
+        },
+        {
+          "id": 45,
+          "name": "new_table",
+          "color": "blue-600",
+          "opacity": 100,
+          "position": {
+            "top": 155,
+            "left": 507
+          },
+          "columns": [
+            {
+              "id": 45,
+              "name": "id",
+              "index_types": "primary_key",
+              "type": "bigint",
+              "nullable": false,
+              "auto_increment": true,
+              "unsigned": true,
+              "default_value": "",
+              "comment": "",
+              "color": null
+            }
+          ]
+        },
+        {
+          "id": 37,
+          "name": "new_table",
+          "color": "blue-500",
+          "opacity": 100,
+          "position": {
+            "top": 82,
+            "left": 141
+          },
+          "columns": [
+            {
+              "id": 37,
+              "name": "id",
+              "index_types": "primary_key",
+              "type": "bigint",
+              "nullable": false,
+              "auto_increment": true,
+              "unsigned": true,
+              "default_value": "",
+              "comment": "",
+              "color": null
+            }
+          ]
+        },
+        {
+          "id": 88,
+          "name": "new_table",
+          "color": "green-600",
+          "opacity": 100,
+          "position": {
+            "top": 509,
+            "left": 538
+          },
+          "columns": [
+            {
+              "id": 88,
+              "name": "id",
+              "index_types": "primary_key",
+              "type": "bigint",
+              "nullable": false,
+              "auto_increment": true,
+              "unsigned": true,
+              "default_value": "",
+              "comment": "",
+              "color": null
+            },
+            {
+              "id": 7720,
+              "name": "columns",
+              "index_types": "none",
+              "type": "string",
+              "nullable": false,
+              "auto_increment": false,
+              "unsigned": false,
+              "default_value": "",
+              "comment": "",
+              "color": null
+            },
+            {
+              "id": 8085,
+              "name": "columns",
+              "index_types": "none",
+              "type": "string",
+              "nullable": false,
+              "auto_increment": false,
+              "unsigned": false,
+              "default_value": "",
+              "comment": "",
+              "color": null
+            },
+            {
+              "id": 2826,
+              "name": "column",
+              "index_types": "none",
+              "type": "string",
+              "nullable": false,
+              "auto_increment": false,
+              "unsigned": false,
+              "default_value": "",
+              "comment": "",
+              "color": null
+            },
+            {
+              "id": 9161,
+              "name": "column",
+              "index_types": "none",
+              "type": "string",
+              "nullable": false,
+              "auto_increment": false,
+              "unsigned": false,
+              "default_value": "",
+              "comment": "",
+              "color": null
+            },
+            {
+              "id": 7455,
+              "name": "column",
+              "index_types": "none",
+              "type": "string",
+              "nullable": false,
+              "auto_increment": false,
+              "unsigned": false,
+              "default_value": "",
+              "comment": "",
+              "color": null
+            }
+          ]
+        }
+      ],
+      "id": 1
+    },
+    {
+      "dbase_id": "2",
+      "tables": [
+        {
+          "dbase_id": 1,
+          "id": 2060,
+          "name": "table",
+          "color": "green-200",
+          "opacity": 100,
+          "position": {
+            "top": 75,
+            "left": 92
+          },
+          "columns": [
+            {
+              "id": 1,
+              "name": "id",
+              "index_types": "primary_key",
+              "type": "bigint",
+              "nullable": true,
+              "auto_increment": true,
+              "unsigned": true,
+              "default_value": "",
+              "comment": "",
+              "color": null
+            },
+            {
+              "id": 8745,
+              "name": "new_table_id",
+              "index_types": "none",
+              "type": "bigint",
+              "nullable": true,
+              "auto_increment": false,
+              "unsigned": false,
+              "default_value": "",
+              "comment": "",
+              "color": "purple-800"
+            },
+            {
+              "id": 2911,
+              "name": "column",
+              "index_types": "none",
+              "type": "string",
+              "nullable": false,
+              "auto_increment": false,
+              "unsigned": false,
+              "default_value": "",
+              "comment": "",
+              "color": null
+            },
+            {
+              "id": 139,
+              "name": "cafer_id",
+              "index_types": "none",
+              "type": "string",
+              "nullable": false,
+              "auto_increment": false,
+              "unsigned": false,
+              "default_value": "",
+              "comment": "",
+              "color": "pink-900"
+            }
+          ]
+        },
+        {
+          "id": 87,
+          "name": "cafer",
+          "color": "pink-900",
+          "opacity": 100,
+          "position": {
+            "top": 674,
+            "left": 153
+          },
+          "columns": [
+            {
+              "id": 87,
+              "name": "id",
+              "index_types": "primary_key",
+              "type": "bigint",
+              "nullable": false,
+              "auto_increment": true,
+              "unsigned": true,
+              "default_value": "",
+              "comment": "",
+              "color": null
+            }
+          ]
+        },
+        {
+          "id": 58,
+          "name": "new_table",
+          "color": "purple-800",
+          "opacity": 100,
+          "position": {
+            "top": 403,
+            "left": 63
+          },
+          "columns": [
+            {
+              "id": 58,
+              "name": "id",
+              "index_types": "primary_key",
+              "type": "bigint",
+              "nullable": false,
+              "auto_increment": true,
+              "unsigned": true,
+              "default_value": "",
+              "comment": "",
+              "color": null
+            }
+          ]
+        },
+        {
+          "id": 78,
+          "name": "new_table",
+          "color": "purple-800",
+          "opacity": 100,
+          "position": {
+            "top": 711,
+            "left": 416
+          },
+          "columns": [
+            {
+              "id": 78,
+              "name": "id",
+              "index_types": "primary_key",
+              "type": "bigint",
+              "nullable": false,
+              "auto_increment": true,
+              "unsigned": true,
+              "default_value": "",
+              "comment": "",
+              "color": null
+            }
+          ]
+        },
+        {
+          "id": 70,
+          "name": "new_table",
+          "color": "pink-500",
+          "opacity": 100,
+          "position": {
+            "top": 35,
+            "left": 533
+          },
+          "columns": [
+            {
+              "id": 70,
+              "name": "id",
+              "index_types": "primary_key",
+              "type": "bigint",
+              "nullable": false,
+              "auto_increment": true,
+              "unsigned": true,
+              "default_value": "",
+              "comment": "",
+              "color": null
+            }
+          ]
+        },
+        {
+          "id": 10,
+          "name": "new_table",
+          "color": "pink-900",
+          "opacity": 100,
+          "position": {
+            "top": 485,
+            "left": 784
+          },
+          "columns": [
+            {
+              "id": 10,
+              "name": "id",
+              "index_types": "primary_key",
+              "type": "bigint",
+              "nullable": false,
+              "auto_increment": true,
+              "unsigned": true,
+              "default_value": "",
+              "comment": "",
+              "color": null
+            },
+            {
+              "id": 8444,
+              "name": "cafer_id",
+              "index_types": "none",
+              "type": "string",
+              "nullable": false,
+              "auto_increment": false,
+              "unsigned": false,
+              "default_value": "",
+              "comment": "",
+              "color": "pink-900"
+            }
+          ]
+        },
+        {
+          "id": 33,
+          "name": "new_table",
+          "color": "purple-700",
+          "opacity": 100,
+          "position": {
+            "top": 239,
+            "left": 838
+          },
+          "columns": [
+            {
+              "id": 33,
+              "name": "id",
+              "index_types": "primary_key",
+              "type": "bigint",
+              "nullable": false,
+              "auto_increment": true,
+              "unsigned": true,
+              "default_value": "",
+              "comment": "",
+              "color": null
+            }
+          ]
+        }
+      ],
+      "id": 2
+    },
+    {
+      "dbase_id": "4",
+      "tables": [
+        {
+          "dbase_id": 1,
+          "id": 61350,
+          "name": "table",
+          "color": "green-200",
+          "opacity": 100,
+          "position": {
+            "top": 36,
+            "left": 836
+          },
+          "columns": [
+            {
+              "id": 1,
+              "name": "id",
+              "index_types": "primary_key",
+              "type": "bigint",
+              "nullable": false,
+              "auto_increment": true,
+              "unsigned": true,
+              "default_value": "",
+              "comment": "",
+              "color": null
+            }
+          ]
+        },
+        {
+          "id": 81,
+          "name": "new_table",
+          "color": "indigo-900",
+          "opacity": 100,
+          "position": {
+            "top": 532,
+            "left": 605
+          },
+          "columns": [
+            {
+              "id": 81,
+              "name": "id",
+              "index_types": "primary_key",
+              "type": "bigint",
+              "nullable": false,
+              "auto_increment": true,
+              "unsigned": true,
+              "default_value": "",
+              "comment": "",
+              "color": null
+            }
+          ]
+        },
+        {
+          "id": 1,
+          "name": "new_table",
+          "color": "yellow-700",
+          "opacity": 100,
+          "position": {
+            "top": 173,
+            "left": 1072
+          },
+          "columns": [
+            {
+              "id": 1,
+              "name": "id",
+              "index_types": "primary_key",
+              "type": "bigint",
+              "nullable": false,
+              "auto_increment": true,
+              "unsigned": true,
+              "default_value": "",
+              "comment": "",
+              "color": null
+            }
+          ]
+        },
+        {
+          "id": 86,
+          "name": "new_table",
+          "color": "green-300",
+          "opacity": 100,
+          "position": {
+            "top": 78,
+            "left": 112
+          },
+          "columns": [
+            {
+              "id": 86,
+              "name": "id",
+              "index_types": "primary_key",
+              "type": "bigint",
+              "nullable": false,
+              "auto_increment": true,
+              "unsigned": true,
+              "default_value": "",
+              "comment": "",
+              "color": null
+            }
+          ]
+        },
+        {
+          "id": 0,
+          "name": "new_table",
+          "color": "purple-400",
+          "opacity": 100,
+          "position": {
+            "top": 357,
+            "left": 135
+          },
+          "columns": [
+            {
+              "id": 0,
+              "name": "id",
+              "index_types": "primary_key",
+              "type": "bigint",
+              "nullable": false,
+              "auto_increment": true,
+              "unsigned": true,
+              "default_value": "",
+              "comment": "",
+              "color": null
+            }
+          ]
+        }
+      ],
+      "id": 3
+    },
+    {
+      "isTrusted": true,
+      "id": 4
+    },
+    {
+      "isTrusted": true,
+      "id": 5
+    },
+    {
+      "isTrusted": true,
+      "id": 6
+    },
+    {
+      "isTrusted": true,
+      "id": 7
+    },
+    {
+      "isTrusted": true,
+      "id": 8
+    },
+    {
+      "isTrusted": true,
+      "id": 9
+    },
+    {
+      "isTrusted": true,
+      "id": 10
+    },
+    {
+      "isTrusted": true,
+      "id": 11
+    }
+  ],
   "dbase": [
     {
       "id": 1,
-      "name": "Db 1x"
+      "name": "Tablo 1"
+    },
+    {
+      "id": 2,
+      "name": "Tablo 2"
+    },
+    {
+      "id": 4,
+      "name": "Tablo 3"
     }
   ],
   "empty": []

@@ -22,6 +22,7 @@
         :z="size.z"
         @resizing="resize" 
         @dragging="resize"
+        @dragstop="onDeactivated"
         @clicked="setZ"
     >
         <div class="shadow-lg cursor-pointer" :class="`opacity-${table.opacity}`">
@@ -47,13 +48,13 @@
     
 <script setup>
     import { KeyIcon, FingerPrintIcon, InformationCircleIcon} from "@heroicons/vue/solid";
-    import {ref, defineProps} from "vue"
+    import {ref, defineProps, defineEmits} from "vue"
     import VueDragResize from 'vue3-drag-resize'
     const props = defineProps(["content_size", "table", "z", "setZ"])
+    const emit = defineEmits(["drag"])
     const isActive = ref(true)
     const size = ref({width: 0, height: 0, top: props.table.position.top, left: props.table.position.left, z: props.z})
     
-
     //content_size ana contentin boyutları
     //size tablo contentinin boyutları ve pozisyonu
 
@@ -62,10 +63,15 @@
         size.value.height = newRect.height;
         size.value.top    = newRect.top;
         size.value.left   = newRect.left;
+        
     }
 
     const setZ = (newRect) => {
         props.setZ(props.table.id)
         size.value = {...size.value, z: props.z}
+    }
+
+    const onDeactivated = () => {
+        emit('drag', size.value)
     }
 </script>

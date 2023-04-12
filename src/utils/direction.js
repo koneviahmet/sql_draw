@@ -1,15 +1,15 @@
 const directionPageArr = [
   { 
-      page: "global",
-      menu: 'userMenu',
-      header: 'userHeader',
-      footer: 'globalFooter'
+    page: "global",
+    menu: 'userMenu',
+    header: 'userHeader',
+    footer: 'globalFooter'
   },
   {
-      page: "HomePage",
-      menu: false,
-      footer: false,
-      header: false
+    page: "HomePage",
+    menu: false,
+    footer: false,
+    header: false
   },
   {
     page: "TableHome",
@@ -40,7 +40,13 @@ const directionPageArr = [
   {
       page: "Error404",
       menu: false
-  }
+  },
+  {
+    page: "DBaseHome",
+    menu: false,
+    footer: false,
+    header: false
+}
   
 ];
 

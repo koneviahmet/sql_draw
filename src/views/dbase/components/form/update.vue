@@ -1,6 +1,6 @@
 <template> 
   <div class="m-4">
-    <form class="w-full max-w-sm">
+    <form class="w-full">
       <div class="alert alert-error my-4" v-if="dbaseError">
         <div class="flex-1">
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="w-6 h-6 mx-2 stroke-current">    
@@ -35,22 +35,19 @@
 <script>
 
 import useUpdate from './updateValidate';
-import { useRouter, useRoute } from "vue-router";
 import useDbase from '../../../../compositions/useModelDbase'
 
 
 export default {
-    setup(){ 
+    props: ["id"],
+    emits: ["id"],
+    setup(props, {emit}){ 
         const {validate, errors, values} = useUpdate();
-        const router = useRouter();
-        const route = useRoute();
-
         const {dbaseLoading, dbaseError, updateDbase, getDbase} = useDbase();
 
-        getDbase({id:route.params.id})
+        getDbase({id:props.id})
           .then(response => {
               values.name = response.name 
-              
               console.log(values.name);
           })
 
@@ -59,8 +56,10 @@ export default {
             validate().then(validateSuccess => {
                 !validateSuccess.valid && console.log("formu kontrol ediniz.", errors.value) 
                 if(validateSuccess.valid){
-                    updateDbase({id:route.params.id,...values}).then(response => {
-                        router.push(`/dbase/detail/${response.id}`)
+                    updateDbase({id:props.id,...values}).then(response => {
+                        // router.push(`/dbase/detail/${response.id}`)
+                        console.log("update");
+                        emit("id", null)
                     })
                 }
             }).catch(validateError => {
