@@ -9,6 +9,7 @@ export default createStore({
     user: null,
     saltKey: "haydaHobbaGizliKey!456?",
     schema: [], 
+ creator: [], 
  dbase: [], 
  table: [],
   },
@@ -25,6 +26,9 @@ export default createStore({
 }, 
  addDbase(state, dbase) { 
  state.dbase = [...dbase]; 
+}, 
+ addCreator(state, creator) { 
+ state.creator = [...creator]; 
 }, 
  addSchema(state, schema) {
       state.schema = [...schema];
@@ -43,6 +47,7 @@ export default createStore({
     _saltKey: (state) => state.saltKey,
     _getTable: (state) => state?.table, 
  _getDbase: (state) => state?.dbase, 
+ _getCreator: (state) => state?.creator, 
  _getSchema: (state) => state?.schema,
   },
   plugins: [

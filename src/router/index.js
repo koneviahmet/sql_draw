@@ -9,11 +9,13 @@ import { schemaRouters } from "./routers/schema.js";
 import { errorRouters } from "./routers/error.js";
 import { tableRouters } from "./routers/table.js" 
 import { dbaseRouters } from "./routers/dbase.js" 
+import { creatorRouters } from "./routers/creator.js" 
 //import
 
 const router = createRouter({ 
     routes: [
         ...homeRouters,
+        ...creatorRouters,
         ...dbaseRouters,
         ...tableRouters,
         ...infoRouters,

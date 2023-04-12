@@ -41,6 +41,12 @@ const rolePageArr = {
   DbaseDetail: [1,2, 3], 
   DbaseList: [1,2, 3], 
   DbaseSearch: [1,2, 3], 
+  CreatorHome: [2, 3],
+  CreatorCreate: [1, 2, 3], 
+  CreatorUpdate: [2, 3], 
+  CreatorDetail: [2, 3], 
+  CreatorList: [2, 3], 
+  CreatorSearch: [2, 3], 
   empty: [],
 };
 

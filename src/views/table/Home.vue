@@ -16,13 +16,13 @@
           <TablesMenu :tables="tables" :activeTableId="activeTableId" @delete="deleteTableFNC" @active_table="activeTableId = $event"/>
           <div class="h-48"></div>
         </div>
-    
+   
         <!--table content -->
         <div class="w-full min-h-screen bg-red-200">
           <Tables :tables="tables" @drag="dragFnc" @active_table="activeTableId = $event" :selectedActiveTableId="selectedActiveTableId"/>
         </div>
 
-        <div class="min-h-screen relative  bg-white" :class="isShowRight ? 'w-2/12' : 'w-0 h-0'">
+        <div class="min-h-screen relative  bg-white" :class="activeTableId && isShowRight ? 'w-full' : 'w-0 h-0'">
           <div class="bg-white absolute cursor-pointer top-0 left-0 -ml-6 z-50" @click="isShowRight = !isShowRight">
             <ChevronLeftIcon v-if="!isShowRight" class="w-6"/>
             <ChevronRightIcon v-else class="w-6"/>            
@@ -30,7 +30,7 @@
 
           <!--right content-->
           <div>
-            asd {{ activeTableId }}
+            <Creator :activeTableId="activeTableId" :tables="tables"/>
           </div>
 
         </div>
@@ -49,12 +49,14 @@ import Tables from "./Tables.vue"
 import TablesMenu from "./components/other/TablesMenu.vue"
 import colors  from '../../env/colors.js';
 import useTable from '../../compositions/useModelTable'
+import Creator from '../creator/Home.vue'
+
 const {tableLoading, tableData, tableError, getTables, getTable, addTable, updateTable, deleteTable} = useTable();
 
 const route         = useRoute();
 const dbase_id      = route.params.id
 const isShowLeft    = ref(false)
-const isShowRight   = ref(false)
+const isShowRight   = ref(true)
 const activeTableId = ref(0)
 const selectedActiveTableId = ref(0)
 const tables        = ref([]);

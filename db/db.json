@@ -73,12 +73,12 @@
         {
           "dbase_id": 1,
           "id": 86064,
-          "name": "table 1 olaca",
+          "name": "users",
           "color": "green-200",
-          "opacity": 100,
+          "opacity": 40,
           "position": {
-            "top": 711,
-            "left": 1129
+            "top": 291,
+            "left": 130
           },
           "columns": [
             {
@@ -92,27 +92,39 @@
               "default_value": "",
               "comment": "",
               "color": null
-            }
-          ]
-        },
-        {
-          "id": 57,
-          "name": "new_table",
-          "color": "indigo-700",
-          "opacity": 100,
-          "position": {
-            "top": 402,
-            "left": 100
-          },
-          "columns": [
+            },
             {
-              "id": 57,
-              "name": "id",
-              "index_types": "primary_key",
-              "type": "bigint",
+              "id": 8763,
+              "name": "name",
+              "index_types": "none",
+              "type": "string",
               "nullable": false,
-              "auto_increment": true,
-              "unsigned": true,
+              "auto_increment": false,
+              "unsigned": false,
+              "default_value": "",
+              "comment": "",
+              "color": null
+            },
+            {
+              "id": 2992,
+              "name": "email",
+              "index_types": "none",
+              "type": "string",
+              "nullable": false,
+              "auto_increment": false,
+              "unsigned": false,
+              "default_value": "",
+              "comment": "",
+              "color": null
+            },
+            {
+              "id": 6076,
+              "name": "date",
+              "index_types": "none",
+              "type": "type-1",
+              "nullable": false,
+              "auto_increment": false,
+              "unsigned": false,
               "default_value": "",
               "comment": "",
               "color": null
@@ -120,65 +132,17 @@
           ]
         },
         {
-          "id": 45,
-          "name": "new_table",
-          "color": "blue-600",
+          "id": 16,
+          "name": "articles",
+          "color": "indigo-800",
           "opacity": 100,
           "position": {
-            "top": 155,
-            "left": 507
+            "top": 87,
+            "left": 134
           },
           "columns": [
             {
-              "id": 45,
-              "name": "id",
-              "index_types": "primary_key",
-              "type": "bigint",
-              "nullable": false,
-              "auto_increment": true,
-              "unsigned": true,
-              "default_value": "",
-              "comment": "",
-              "color": null
-            }
-          ]
-        },
-        {
-          "id": 37,
-          "name": "new_table",
-          "color": "blue-500",
-          "opacity": 100,
-          "position": {
-            "top": 82,
-            "left": 141
-          },
-          "columns": [
-            {
-              "id": 37,
-              "name": "id",
-              "index_types": "primary_key",
-              "type": "bigint",
-              "nullable": false,
-              "auto_increment": true,
-              "unsigned": true,
-              "default_value": "",
-              "comment": "",
-              "color": null
-            }
-          ]
-        },
-        {
-          "id": 88,
-          "name": "new_table",
-          "color": "green-600",
-          "opacity": 100,
-          "position": {
-            "top": 509,
-            "left": 538
-          },
-          "columns": [
-            {
-              "id": 88,
+              "id": 16,
               "name": "id",
               "index_types": "primary_key",
               "type": "bigint",
@@ -190,8 +154,20 @@
               "color": null
             },
             {
-              "id": 7720,
-              "name": "columns",
+              "id": 1093,
+              "name": "users_id",
+              "index_types": "none",
+              "type": "string",
+              "nullable": false,
+              "auto_increment": false,
+              "unsigned": false,
+              "default_value": "",
+              "comment": "",
+              "color": "green-200"
+            },
+            {
+              "id": 8234,
+              "name": "name",
               "index_types": "none",
               "type": "string",
               "nullable": false,
@@ -202,44 +178,8 @@
               "color": null
             },
             {
-              "id": 8085,
-              "name": "columns",
-              "index_types": "none",
-              "type": "string",
-              "nullable": false,
-              "auto_increment": false,
-              "unsigned": false,
-              "default_value": "",
-              "comment": "",
-              "color": null
-            },
-            {
-              "id": 2826,
-              "name": "column",
-              "index_types": "none",
-              "type": "string",
-              "nullable": false,
-              "auto_increment": false,
-              "unsigned": false,
-              "default_value": "",
-              "comment": "",
-              "color": null
-            },
-            {
-              "id": 9161,
-              "name": "column",
-              "index_types": "none",
-              "type": "string",
-              "nullable": false,
-              "auto_increment": false,
-              "unsigned": false,
-              "default_value": "",
-              "comment": "",
-              "color": null
-            },
-            {
-              "id": 7455,
-              "name": "column",
+              "id": 5126,
+              "name": "date",
               "index_types": "none",
               "type": "string",
               "nullable": false,
@@ -641,15 +581,8 @@
     {
       "id": 1,
       "name": "Tablo 1"
-    },
-    {
-      "id": 2,
-      "name": "Tablo 2"
-    },
-    {
-      "id": 4,
-      "name": "Tablo 3"
     }
   ],
+  "creator": [],
   "empty": []
 }
