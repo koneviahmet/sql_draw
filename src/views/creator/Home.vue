@@ -34,11 +34,8 @@ const creator = ref(creators[0].name)
 const sub_creator = ref(creators.filter(i => i.name == creator.value)[0].items[0])
 
 watch(creator, currentCreator => {
-  console.log(currentCreator);
   sub_creator.value = creators.filter(i => i.name == creator.value)[0].items[0]
 })
-
-
 
 const selectedTable = computed(() => {
   const index = props.tables.findIndex(i => i.id == props.activeTableId)
