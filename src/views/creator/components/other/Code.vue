@@ -1,35 +1,36 @@
 <template>
-    <!-- https://github.com/F-one-1/vue-highlight-code -->
-    <div>
-    <!-- <HighCode
-        class="code"
-        :codeValue="code || ''"
-        :theme="'dark'"
-        :lang="lang"
-        :textEditor="true"
-        :nameShow="false"
-        :height="height"
-        :width="'100%'"
-        v-if="refresh"
-        ></HighCode> -->
+    <!-- https://www.npmjs.com/package/codemirror-editor-vue3 -->
+    <div class="py-6">
+       <Codemirror
+            v-model:value="code"
+            placeholder="test placeholder"
+            :height="300"
+            :options="{ mode: 'text/javascript', theme: 'dracula'}"
+            v-if="refresh"
+        />
     </div>
 </template>
 
-
 <script setup>
-// import {ref, defineProps, watch} from 'vue'
-// import { HighCode } from 'vue-highlight-code';
-// import 'vue-highlight-code/dist/style.css';
-// const props = defineProps(["lang", "code", "isRefresh", 'height'])
-// const refresh = ref(true)
+import {ref, defineProps, watch} from 'vue'
+import Codemirror from "codemirror-editor-vue3";
+import "codemirror/addon/display/placeholder.js";
+import "codemirror/mode/javascript/javascript.js";
+import "codemirror/addon/display/placeholder.js";
+import "codemirror/theme/dracula.css";
+const props = defineProps(["lang", "code"])
+const refresh = ref(true)
+const code = ref(props.code)
 
 
-// watch(props, () => {
-//     if (props.isRefresh) {
-//         refresh.value = false
-//         setTimeout(() => refresh.value = true, 10)
-//     }
-// })
+watch(props, (cProps) => {
+    console.log("props değişti");
+    refresh.value = false
+    code.value = cProps.code
+    setTimeout(() => refresh.value = true, 10)
+    
+}, {deep: true})
 
 
 </script>
+

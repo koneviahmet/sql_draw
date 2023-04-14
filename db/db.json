@@ -75,7 +75,7 @@
           "id": 86064,
           "name": "users",
           "color": "green-200",
-          "opacity": 100,
+          "opacity": 40,
           "position": {
             "top": 303,
             "left": 72
@@ -161,8 +161,8 @@
           "color": "indigo-800",
           "opacity": 100,
           "position": {
-            "top": 78,
-            "left": 129
+            "top": 83,
+            "left": 270
           },
           "columns": [
             {
@@ -239,6 +239,18 @@
             },
             {
               "id": 9175,
+              "name": "column",
+              "index_types": "none",
+              "type": "string",
+              "nullable": false,
+              "auto_increment": false,
+              "unsigned": false,
+              "default_value": "",
+              "comment": "",
+              "color": null
+            },
+            {
+              "id": 3766,
               "name": "column",
               "index_types": "none",
               "type": "string",
