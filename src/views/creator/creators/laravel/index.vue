@@ -2,6 +2,9 @@
     <div>
         <controller :tables="tables" :selectedTable="selectedTable" v-if="sub_creator == 'controller'"/>
         <migration :tables="tables" :selectedTable="selectedTable" v-if="sub_creator == 'migration'"/>
+        <install :tables="tables" :selectedTable="selectedTable" v-if="sub_creator == 'install'"/>
+    
+        <component :is="'migration'" :tables="tables" :selectedTable="selectedTable"/>
     </div>
 </template>
 
@@ -9,6 +12,9 @@
 import {ref, defineProps} from 'vue'
 import controller from "./index/controller.vue"
 import migration from "./index/migration.vue"
+import install from "./index/install.vue"
 const props = defineProps(["tables", "selectedTable", "sub_creator"])
+
+
 
 </script>

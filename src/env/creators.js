@@ -1,12 +1,12 @@
 const types = [
   {
-    name: "sql",
-    items: ["create_table"]
+    name: "laravel",
+    items: ["install","controller", "migration"]
   },
   {
-    name: "laravel",
-    items: ["controller", "migration"]
-  }
+    name: "sql",
+    items: ["create_table"]
+  }  
 ]
  
   

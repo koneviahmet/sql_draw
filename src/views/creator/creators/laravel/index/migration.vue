@@ -1,6 +1,6 @@
 <template>
     <div>
-        <Article :article="article"/>
+       <Article :article="article"/>
     </div>
 </template>
 

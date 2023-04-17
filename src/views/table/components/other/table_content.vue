@@ -75,3 +75,14 @@
         emit('drag', size.value)
     }
 </script>
+
+
+<style>
+
+
+.content-container{
+    background-color: #39a9cb;
+    border: 0 !important;
+    height: auto !important;
+}
+</style>

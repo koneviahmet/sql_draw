@@ -77,8 +77,8 @@
           "color": "green-200",
           "opacity": 40,
           "position": {
-            "top": 303,
-            "left": 72
+            "top": 222,
+            "left": 0
           },
           "columns": [
             {
@@ -140,18 +140,6 @@
               "default_value": "",
               "comment": "",
               "color": null
-            },
-            {
-              "id": 8696,
-              "name": "column",
-              "index_types": "none",
-              "type": "string",
-              "nullable": false,
-              "auto_increment": false,
-              "unsigned": false,
-              "default_value": "",
-              "comment": "",
-              "color": null
             }
           ]
         },
@@ -161,8 +149,8 @@
           "color": "indigo-800",
           "opacity": 100,
           "position": {
-            "top": 83,
-            "left": 270
+            "top": 32,
+            "left": 180
           },
           "columns": [
             {
@@ -215,42 +203,6 @@
             },
             {
               "id": 3270,
-              "name": "column",
-              "index_types": "none",
-              "type": "string",
-              "nullable": false,
-              "auto_increment": false,
-              "unsigned": false,
-              "default_value": "",
-              "comment": "",
-              "color": null
-            },
-            {
-              "id": 8594,
-              "name": "column",
-              "index_types": "none",
-              "type": "string",
-              "nullable": false,
-              "auto_increment": false,
-              "unsigned": false,
-              "default_value": "",
-              "comment": "",
-              "color": null
-            },
-            {
-              "id": 9175,
-              "name": "column",
-              "index_types": "none",
-              "type": "string",
-              "nullable": false,
-              "auto_increment": false,
-              "unsigned": false,
-              "default_value": "",
-              "comment": "",
-              "color": null
-            },
-            {
-              "id": 3766,
               "name": "column",
               "index_types": "none",
               "type": "string",
