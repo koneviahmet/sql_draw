@@ -4,7 +4,6 @@
         <migration :tables="tables" :selectedTable="selectedTable" v-if="sub_creator == 'migration'"/>
         <install :tables="tables" :selectedTable="selectedTable" v-if="sub_creator == 'install'"/>
     
-        <component :is="'migration'" :tables="tables" :selectedTable="selectedTable"/>
     </div>
 </template>
 
