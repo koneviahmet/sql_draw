@@ -77,8 +77,8 @@
           "color": "green-200",
           "opacity": 100,
           "position": {
-            "top": 405,
-            "left": 65
+            "top": 446,
+            "left": 15
           },
           "columns": [
             {
@@ -88,7 +88,7 @@
               "type": "bigint",
               "nullable": false,
               "auto_increment": true,
-              "unsigned": true,
+              "unsigned": false,
               "default_value": "",
               "comment": "",
               "color": null
@@ -108,7 +108,7 @@
             {
               "id": 6076,
               "name": "date",
-              "index_types": "none",
+              "index_types": "index",
               "type": "char",
               "nullable": false,
               "auto_increment": false,
@@ -121,7 +121,7 @@
               "id": 2728,
               "name": "articles_id",
               "index_types": "none",
-              "type": "bigint",
+              "type": "decimal",
               "nullable": false,
               "auto_increment": false,
               "unsigned": false,
@@ -137,7 +137,7 @@
               "nullable": true,
               "auto_increment": false,
               "unsigned": false,
-              "default_value": "15",
+              "default_value": "12",
               "comment": "",
               "color": null
             }
@@ -149,8 +149,8 @@
           "color": "indigo-800",
           "opacity": 100,
           "position": {
-            "top": 45,
-            "left": 50
+            "top": 22,
+            "left": 12
           },
           "columns": [
             {
@@ -221,8 +221,8 @@
           "color": "purple-600",
           "opacity": 40,
           "position": {
-            "top": 246,
-            "left": 158
+            "top": 72,
+            "left": 355
           },
           "columns": [
             {
@@ -260,6 +260,42 @@
               "default_value": "",
               "comment": "",
               "color": null
+            }
+          ]
+        },
+        {
+          "id": 59,
+          "name": "new_table",
+          "color": "indigo-600",
+          "opacity": 40,
+          "position": {
+            "top": 279,
+            "left": 123
+          },
+          "columns": [
+            {
+              "id": 59,
+              "name": "id",
+              "index_types": "primary_key",
+              "type": "bigint",
+              "nullable": false,
+              "auto_increment": true,
+              "unsigned": true,
+              "default_value": "",
+              "comment": "",
+              "color": null
+            },
+            {
+              "id": 9731,
+              "name": "articles_id",
+              "index_types": "none",
+              "type": "bigint",
+              "nullable": false,
+              "auto_increment": false,
+              "unsigned": false,
+              "default_value": "",
+              "comment": "",
+              "color": "indigo-800"
             }
           ]
         }

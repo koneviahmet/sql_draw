@@ -26,20 +26,67 @@ const setColumns = (currentColumns) => {
         let end = ";"
 
         let column = getNameToColumns(n)
+
+        // console.log(column);
+
         const function_arr = ["id", "timestamps"]
         if (function_arr.includes(column.name) || column.index_types == 'primary_key') {
             middle +=  `${n}()`
         }else{
+            /* iki parametre alabilecekleri belirleyelim */
+            const otherParameter = [
+                {
+                    type: 'char',
+                    args: [10]
+                },
+                {
+                    type: 'varchar',
+                    args: [250]
+                },
+                {
+                    type: 'string',
+                    args: [50]
+                },
+                {
+                    type: 'decimal',
+                    args: [8,2]
+                },
+            ]
+            
+            let otherParameterFilter = otherParameter.filter(i => i.type == column.type)
 
-            middle +=  `${column.type}('${n}')`
+            if (otherParameterFilter.length > 0) {
+                //birden fazla parametre alıyor demektir.
+                middle +=  `${column.type}('${n}',${otherParameterFilter[0].args.join(',')})`
+            }else{  
 
+                //tek parametre alıyor demektir
+                middle +=  `${column.type}('${n}')`
+
+            }
         }
 
-        
+        //add nulable
         if (column.nullable) {
             middle += `->nullable()`
         }
-
+        
+        //add unsigned
+        if (column.unsigned) {
+            middle += `->unsigned()`
+        }
+        
+        //add unique
+        if (column.index_types == "unique_key") {
+            middle += `->unique()`
+        }
+  
+        //add index
+        if (column.index_types == "index") {
+            middle += `->index()`
+        }
+     
+        //add default
         if (column.default_value) {
             middle += `->default('${column.default_value}')`
         }
@@ -82,7 +129,53 @@ const article = computed(() => {
             code: code.value,
             lang: 'javascript',
             height: '52px'
-        }    
+        },
+        {
+            type: 'dictionary',
+            dictionary: [
+                ["nullable()", "Sütunun null değerlerini kabul etmesine izin verir."], 
+                ["default()", "Sütunun varsayılan değerini ayarlar."], 
+                ["unsigned()", "Tam sayı sütunlarının negatif değerler kabul etmemesini sağlar."], 
+                ["unique()", "Sütunu benzersiz kılar."], 
+                ["index()", "Sütunu bir index olarak tanımlar."], 
+                ["references()", "Sütunun bir diğer tabloya referans olması için kullanılır."], 
+            ]
+        },
+        {
+            type: 'bash',
+            text: `$table->foreign('user_id')->references('id')->on('users');`,
+            description: 'references kullanımı için aşağıda örnek verilmiştir.'
+
+        },
+        {
+            type: 'sub_title',
+            text: 'Migration composer komutları'
+        },
+        {
+            type: 'bash',
+            text: `php artisan make:migration create_table_name`,
+            description: 'Bu komut, migration dosyasını oluşturur.'
+        },
+        {
+            type: 'bash',
+            text: `php artisan migrate`,
+            description: 'Bu komut, tüm migration dosyalarını veritabanına uygular.'
+        },
+        {
+            type: 'bash',
+            text: `php artisan migrate:rollback`,
+            description: 'Bu komut, son yapılmış migration işlemini geri alır.'
+        },
+        {
+            type: 'bash',
+            text: `php artisan migrate:reset`,
+            description: 'Bu komut, tüm migration işlemlerini geri alır.'
+        },
+        {
+            type: 'bash',
+            text: `php artisan migrate:fresh`,
+            description: 'Bu komut, tüm tabloları siler ve migration dosyalarını uygular.'
+        }     
     ]
 })
 
