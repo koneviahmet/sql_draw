@@ -3,7 +3,6 @@
         <controller :tables="tables" :selectedTable="selectedTable" v-if="sub_creator == 'controller'"/>
         <migration :tables="tables" :selectedTable="selectedTable" v-if="sub_creator == 'migration'"/>
         <install :tables="tables" :selectedTable="selectedTable" v-if="sub_creator == 'install'"/>
-    
     </div>
 </template>
 

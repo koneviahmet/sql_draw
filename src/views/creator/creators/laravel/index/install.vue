@@ -17,7 +17,7 @@ const article = [
         text: 'Laravel Kurulumu'
     },
     {
-        type: 'paragraf',
+        type: 'paragraph',
         text: 'yeni laravel projesi oluşturmak için aşağıdaki komut kullanılabilir. komudu kullanmak için laraveli globale kurmak gerekir. '
     },
     {
@@ -25,7 +25,7 @@ const article = [
         text: 'laravel new proje-adi'
     },
     {
-        type: 'paragraf',
+        type: 'paragraph',
         text: 'composer kullanarak yeni proje oluşturmak için aşağıdaki bash kullanılabilir.'
     },
     {
@@ -33,7 +33,7 @@ const article = [
         text: 'composer create-project --prefer-dist laravel/laravel proje-adi'
     },
     {
-        type: 'paragraf',
+        type: 'paragraph',
         text: 'Projeyi ayağa kaldırmak için aşağıdaki komutu kullanabiliriz.'
     },
     {

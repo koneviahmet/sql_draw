@@ -77,8 +77,7 @@
 </script>
 
 
-<style>
-
+<style scope>
 
 .content-container{
     background-color: #39a9cb;

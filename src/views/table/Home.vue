@@ -30,7 +30,7 @@
 
           <!--right content-->
           <div>
-            <Creator :activeTableId="activeTableId" :tables="tables"/>
+            <Creator :activeTableId="activeTableId" :tables="tables" v-if="refresh"/>
           </div>
 
         </div>
@@ -61,6 +61,7 @@ const activeTableId = ref(0)
 const selectedActiveTableId = ref(0)
 const tables        = ref([]);
 const db_id         = ref(null)
+const refresh       = ref(true)
 
 
 const newTables = ref({
@@ -117,10 +118,17 @@ const dragFnc = (size) => {
   console.log("dragStop->");
 }
 
-watch(activeTableId, (currentActiveTableId) => selectedActiveTableId.value = currentActiveTableId)
+watch(activeTableId, (currentActiveTableId) => {
+  selectedActiveTableId.value = currentActiveTableId
+
+  refresh.value = false
+  setTimeout(() => refresh.value = true,100)
+})
+
+
 watch(tables, (currentTables) => {
   console.log("tables => değişti");
-  
+
   const updateTableObj = newTables.value
   updateTableObj.id = db_id.value
   updateTableObj.tables = currentTables

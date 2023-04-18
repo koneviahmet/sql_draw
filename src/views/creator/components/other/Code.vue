@@ -24,7 +24,6 @@ const code = ref(props.code)
 
 
 watch(props, (cProps) => {
-    console.log("props değişti");
     refresh.value = false
     code.value = cProps.code
     setTimeout(() => refresh.value = true, 10)

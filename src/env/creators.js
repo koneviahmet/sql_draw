@@ -1,7 +1,7 @@
 const types = [
   {
     name: "laravel",
-    items: ["install","controller", "migration"]
+    items: ["migration","install","controller", "migration"]
   },
   {
     name: "sql",
