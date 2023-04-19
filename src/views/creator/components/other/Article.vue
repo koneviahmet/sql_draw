@@ -7,6 +7,7 @@
             <Code :lang="i?.lang" :code="i?.code" :height="i?.height"   v-if="i.type == 'code'" />
             <Bash :item="i" v-if="i.type == 'bash'"/>
             <SelectColumn :selectedTable="selectedTable" :item="i" @columns="setColumns" v-if="i.type == 'select_column'"/>
+            <MatchColumn :selectedTable="selectedTable" :item="i" @columns="setMatchColumns" v-if="i.type == 'match_column'"/>
             <Dictionary :item="i" v-if="i.type == 'dictionary'"/>
         </div>
     </div>
@@ -21,15 +22,20 @@ import Paragraph from './Paragraph.vue'
 import Code from './Code.vue'
 import Bash from './Bash.vue'
 import SelectColumn from './SelectColumn.vue'
+import MatchColumn from './MatchColumn.vue'
 import Dictionary from './Dictionary.vue'
 
 
 const props     = defineProps(["article", "selectedTable"])
-const emit     = defineEmits(["columns"])
+const emit     = defineEmits(["columns", "match_columns"])
 
 
 const setColumns = (columns) => {
     emit("columns", columns)
+}
+
+const setMatchColumns = (columns) => {
+    emit("match_columns", columns)
 }
 
 

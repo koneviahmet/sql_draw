@@ -153,7 +153,7 @@ const article = computed(() => {
         },
         {
             type: 'bash',
-            text: `php artisan make:migration create_table_name`,
+            text: `php artisan make:migration ${props?.selectedTable?.name}`,
             description: 'Bu komut, migration dosyasını oluşturur.'
         },
         {

@@ -77,8 +77,8 @@
           "color": "green-200",
           "opacity": 100,
           "position": {
-            "top": 446,
-            "left": 15
+            "top": 297,
+            "left": 2
           },
           "columns": [
             {
@@ -149,8 +149,8 @@
           "color": "indigo-800",
           "opacity": 100,
           "position": {
-            "top": 22,
-            "left": 12
+            "top": 0,
+            "left": 0
           },
           "columns": [
             {
@@ -221,8 +221,8 @@
           "color": "purple-600",
           "opacity": 40,
           "position": {
-            "top": 72,
-            "left": 355
+            "top": 120,
+            "left": 39
           },
           "columns": [
             {
@@ -269,8 +269,8 @@
           "color": "indigo-600",
           "opacity": 40,
           "position": {
-            "top": 279,
-            "left": 123
+            "top": 168,
+            "left": 244
           },
           "columns": [
             {

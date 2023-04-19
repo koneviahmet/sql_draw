@@ -115,7 +115,7 @@ onMounted(() => {
 const dragFnc = (size) => {
   const activeIndex = tables.value.findIndex(i => i.id == activeTableId.value);
   tables.value[activeIndex].position = {top: size.top, left: size.left}
-  console.log("dragStop->");
+  // console.log("dragStop->");
 }
 
 watch(activeTableId, (currentActiveTableId) => {
@@ -127,7 +127,7 @@ watch(activeTableId, (currentActiveTableId) => {
 
 
 watch(tables, (currentTables) => {
-  console.log("tables => değişti");
+  // console.log("tables => değişti");
 
   const updateTableObj = newTables.value
   updateTableObj.id = db_id.value

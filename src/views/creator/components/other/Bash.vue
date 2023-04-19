@@ -19,8 +19,4 @@
 import {defineProps} from 'vue'
 import Copy from '../other/Copy.vue';
 const props = defineProps(["item"])
-
-
-
-
 </script>
