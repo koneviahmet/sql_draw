@@ -77,8 +77,8 @@
           "color": "green-200",
           "opacity": 100,
           "position": {
-            "top": 297,
-            "left": 2
+            "top": 353,
+            "left": 0
           },
           "columns": [
             {
@@ -149,7 +149,7 @@
           "color": "indigo-800",
           "opacity": 100,
           "position": {
-            "top": 0,
+            "top": 23,
             "left": 0
           },
           "columns": [
@@ -221,8 +221,8 @@
           "color": "purple-600",
           "opacity": 40,
           "position": {
-            "top": 120,
-            "left": 39
+            "top": 184,
+            "left": 25
           },
           "columns": [
             {
@@ -267,10 +267,10 @@
           "id": 59,
           "name": "new_table",
           "color": "indigo-600",
-          "opacity": 40,
+          "opacity": 100,
           "position": {
-            "top": 168,
-            "left": 244
+            "top": 238,
+            "left": 0
           },
           "columns": [
             {

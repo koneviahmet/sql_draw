@@ -37,7 +37,7 @@ watch(all_checked, (currentChecked) => {
 // onMounted(() => setCheckedEmit())
 
 const getDefaultChecked = (name) => {
-   let default_select = props.item?.default.filter(i => i.name == name)?.[0]?.checked
+   let default_select = props.item?.default.filter(i => i.name.includes(name))?.[0]?.checked
    return default_select || null
 }
 
