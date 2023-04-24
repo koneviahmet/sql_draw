@@ -77,8 +77,8 @@
           "color": "green-200",
           "opacity": 100,
           "position": {
-            "top": 353,
-            "left": 0
+            "top": 362,
+            "left": 113
           },
           "columns": [
             {
@@ -149,8 +149,8 @@
           "color": "indigo-800",
           "opacity": 100,
           "position": {
-            "top": 23,
-            "left": 0
+            "top": 315,
+            "left": 48
           },
           "columns": [
             {
@@ -269,8 +269,8 @@
           "color": "indigo-600",
           "opacity": 100,
           "position": {
-            "top": 238,
-            "left": 0
+            "top": 368,
+            "left": 23
           },
           "columns": [
             {
