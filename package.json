@@ -5,7 +5,7 @@
     "dev": "vite",
     "build": "vite build",
     "serve": "vite preview",
-    "db": "json-server --watch db/db.json --port 3004"
+    "db": "json-server --watch dbase/db.json --port 3004"
   },
   "dependencies": {
     "@heroicons/vue": "^1.0.5",
