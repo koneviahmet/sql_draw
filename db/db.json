@@ -77,8 +77,8 @@
           "color": "green-200",
           "opacity": 100,
           "position": {
-            "top": 362,
-            "left": 113
+            "top": 365,
+            "left": 29
           },
           "columns": [
             {
@@ -149,8 +149,8 @@
           "color": "indigo-800",
           "opacity": 100,
           "position": {
-            "top": 315,
-            "left": 48
+            "top": 519,
+            "left": 0
           },
           "columns": [
             {
@@ -221,8 +221,8 @@
           "color": "purple-600",
           "opacity": 40,
           "position": {
-            "top": 184,
-            "left": 25
+            "top": 104,
+            "left": 15
           },
           "columns": [
             {
@@ -267,10 +267,10 @@
           "id": 59,
           "name": "new_table",
           "color": "indigo-600",
-          "opacity": 100,
+          "opacity": 40,
           "position": {
-            "top": 368,
-            "left": 23
+            "top": 252,
+            "left": 0
           },
           "columns": [
             {
