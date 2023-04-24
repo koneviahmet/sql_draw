@@ -23,6 +23,7 @@ const SeedSelect = [
   "$faker->unique()",
   "bcrypt('123456')",
   "Str::random(5)",
+  "Str::slug('Hello World') //hello_world",
   "'Helle World'",
 ]
 

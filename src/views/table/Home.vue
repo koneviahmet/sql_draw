@@ -3,7 +3,8 @@
       <div class="flex">
         <!-- left menu -->
         <div class="min-h-screen relative" :class="isShowLeft ? 'w-4/12' : 'w-0 h-0'">
-          <div class="bg-white absolute cursor-pointer top-0 right-0 -mr-6 z-50" @click="isShowLeft = !isShowLeft">
+          
+          <div class="bg-white absolute cursor-pointer top-0 right-0 -mr-6 z-50 " @click="isShowLeft = !isShowLeft">
             <ChevronLeftIcon v-if="isShowLeft" class="w-6"/>
             <ChevronRightIcon v-else class="w-6"/>
           </div>
@@ -15,6 +16,7 @@
 
           <TablesMenu :tables="tables" :activeTableId="activeTableId" @delete="deleteTableFNC" @active_table="activeTableId = $event"/>
           <div class="h-48"></div>
+          
         </div>
    
         <!--table content -->

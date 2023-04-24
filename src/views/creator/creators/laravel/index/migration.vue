@@ -20,7 +20,7 @@ watch(props, () => setColumns(columns.value))
 
 const setColumns = (currentColumns) => {
     let selectedColumns = currentColumns.map(i => i);
-    const columnsFilter = selectedColumns.map(n => {
+    const columnsFilter = selectedColumns.filter(i => !i.includes("_id")).map(n => {
         let head = "$table->"
         let middle = ""
         let end = ";"
@@ -93,11 +93,23 @@ const setColumns = (currentColumns) => {
 
         // $table->string('name');
     
-
         return `${head}${middle}${end}`
+    }); 
+
+
+
+    //id olanları ekleyelim
+    selectedColumns.filter(i => i.includes("_id")).map(n => {
+        let column = getNameToColumns(n)
+        const regex = /_id/i;
+
+        columnsFilter.push(`$table->foreign('${column.name}')->references('id')->on('${column.name.replace(regex, "")}')->onDelete("cascade ");`)
     });
 
 
+    columnsFilter.push("\n")
+    columnsFilter.push(`$table->charset = "utf8";`)
+    columnsFilter.push(`$table->collation = "utf8_general_ci";`)
     code.value = columnsFilter.join("\n")
     // $table->id();
     // $table->string('name');
@@ -152,8 +164,12 @@ const article = computed(() => {
             text: 'Migration composer komutları'
         },
         {
+            type: 'paragraph',
+            text: 'Laravelde genellikle migration oluşturulurken create_users_table yapısı kullanılır.'
+        },
+        {
             type: 'bash',
-            text: `php artisan make:migration ${props?.selectedTable?.name}`,
+            text: `php artisan make:migration create_${props?.selectedTable?.name}_table`,
             description: 'Bu komut, migration dosyasını oluşturur.'
         },
         {
