@@ -8,8 +8,8 @@
 <script setup>
 import {ref, defineProps, watch, computed} from 'vue'
 import Article from '../../../components/other/Article.vue';
-import SeedSelect from '../../../../../env/seedSelect'
-import SeedDefault from '../../../../../env/seedDefault'
+import FactorySelect from '../../../../../env/factorySelect'
+import FactoryDefault from '../../../../../env/factoryDefault'
 const props = defineProps(["tables", "selectedTable"])
 const code  = ref(`var i = 5;`)
 const columns = ref(null); //seçilen column
@@ -61,8 +61,8 @@ const article = computed(() => {
         },
         {
             type: 'match_column',
-            selected: SeedSelect,
-            default: SeedDefault
+            selected: FactorySelect,
+            default: FactoryDefault
         },
         {
             type: 'code',

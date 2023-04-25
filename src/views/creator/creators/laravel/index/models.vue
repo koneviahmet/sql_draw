@@ -1,6 +1,7 @@
 <template>
+    match_columns2: {{ columns }}
     <div>
-       <Article :selectedTable="selectedTable" :article="article" @match_columns="columns = $event"/>
+       <Article :selectedTable="selectedTable" :article="article" @match_columns2="columns = $event"/>
     </div>
 </template>
 
@@ -8,8 +9,8 @@
 <script setup>
 import {ref, defineProps, watch, computed} from 'vue'
 import Article from '../../../components/other/Article.vue';
-import SeedSelect from '../../../../../env/seedSelect'
-import SeedDefault from '../../../../../env/seedDefault'
+import FactorySelect from '../../../../../env/factorySelect'
+import FactoryDefault from '../../../../../env/factoryDefault'
 const props = defineProps(["tables", "selectedTable"])
 const code  = ref(`var i = 5;`)
 const columns = ref(null); //seçilen column
@@ -53,16 +54,16 @@ const article = computed(() => {
     return [
         {
             type: 'title',
-            text: 'Seeder Nedir?'
+            text: 'Models Nedir?'
         },
         {
             type: 'paragraph',
-            text: 'Seeder\'lar, geliştirme ve test ortamlarında veritabanını doldurmak için kullanışlı bir yöntemdir.'
+            text: 'Laravel modelleri, veritabanı tabloları ile eşleştirilebilir. Örneğin, bir "users" tablosuna karşılık gelen bir "User" modeli oluşturabilirsiniz. Bu model sınıfı, tablodaki her bir satırı bir nesne olarak temsil eder ve veritabanı işlemlerini gerçekleştirmek için kullanılır. Laravel, modeller aracılığıyla veritabanı sorgularını kolaylaştıran ve veri işlemlerini daha okunaklı ve anlaşılır hale getiren birçok yöntem sağlar.'
         },
         {
-            type: 'match_column',
-            selected: SeedSelect,
-            default: SeedDefault
+            type: 'match_column2',
+            selected: FactorySelect,
+            default: FactoryDefault
         },
         {
             type: 'code',
@@ -72,8 +73,30 @@ const article = computed(() => {
         },
         {
             type: 'dictionary',
-            dictionary: [  ["name()", "Rastgele bir isim döndürür"],
-                            ["firstName()", "Rastgele bir ad döndürür"]
+            dictionary: [
+                            ["$table", "Modelin kullanacağı veritabanı tablosunun adını belirtir."],
+                            ["$primaryKey", "Modelin kullanacağı özel bir anahtar sütununu belirtir."],
+                            ["$keyType", "Anahtar sütununun veri tipini belirtir."],
+                            ["$incrementing", "Anahtar sütununun artan (incremental) olup olmadığını belirtir."],
+                            ["$timestamps", "Modelin oluşturma ve güncelleme tarihlerini otomatik olarak güncellemesini sağlar."],
+                            ["$dateFormat", "Tarihleri modelde nasıl biçimlendireceğini belirtir."],
+                            ["$connection", "Modelin kullanacağı veritabanı bağlantısını belirtir."],
+                            ["$perPage", "Sayfalama işlemleri için kaç öğe gösterileceğini belirtir."],
+                            ["$fillable", "Modelin doldurulabilir (fillable) alanlarını belirtir."],
+                            ["$guarded", "Modelin doldurulamaz (guarded) alanlarını belirtir."],
+                            ["$hidden", "Modelde gizlenmesi gereken sütunları belirtir."],
+                            ["$visible", "Modelde görünmesi gereken sütunları belirtir."],
+                            ["$casts", "Modeldeki sütunların veri tiplerini dönüştürür."],
+                            ["$dates", "Modeldeki sütunların tarih verisi içerdiğini belirtir."],
+                            ["$appends", "Modeldeki sütunlara dinamik olarak özellik ekler."],
+                            ["$with", "Modelin yüklenirken varsayılan olarak yüklenmesi gereken ilişkisel verileri belirtir."],
+                            ["$withCount", "İlişkisel verilerin sayısını hesaplamak için kullanılır."],
+                            ["$withoutGlobalScopes", "Global sorgu kapsamlarını devre dışı bırakmak için kullanılır."],
+                            ["$withTrashed", "Silinmiş verileri de dahil ederek tüm verileri yükler."],
+                            ["$onlyTrashed", "Sadece silinmiş verileri yükler."],
+                            ["$using", "Modelin kullanacağı veritabanı bağlantısını ve tablo adını belirler."],
+                            ["$dispatchesEvents", "Modeldeki belirli olayların tetiklenmesini sağlar."],
+                            ["$observables", "Modelde tanımlanmış olayları tutar."]
                         ]
         },
         {

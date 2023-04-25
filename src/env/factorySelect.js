@@ -1,4 +1,4 @@
-const SeedSelect = [
+const FactorySelect = [
   "$faker->name()", 
   "$faker->firstName()", 
   "$faker->lastName()", 
@@ -28,6 +28,6 @@ const SeedSelect = [
 ]
 
 
-export default SeedSelect;
+export default FactorySelect;
  
   
