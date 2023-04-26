@@ -1,5 +1,4 @@
 <template>
-    match_columns2: {{ columns }}
     <div>
        <Article :selectedTable="selectedTable" :article="article" @match_columns2="columns = $event"/>
     </div>
@@ -9,39 +8,98 @@
 <script setup>
 import {ref, defineProps, watch, computed} from 'vue'
 import Article from '../../../components/other/Article.vue';
-import FactorySelect from '../../../../../env/factorySelect'
-import FactoryDefault from '../../../../../env/factoryDefault'
+import ModelSelect from '../../../../../env/modelSelect'
+import ModelDefault from '../../../../../env/modelDefault'
 const props = defineProps(["tables", "selectedTable"])
 const code  = ref(`var i = 5;`)
 const columns = ref(null); //seçilen column
 
-
+let valueArr = ["fillable", "hidden", "guarded"]
+let valueBoolean = ["timestamps"]
+let valuePrimary = ["primaryKey"]
 
 watch(columns, (currentColumns) => setColumns(currentColumns))
 watch(props, () => setColumns(columns.value))
 
-
+//{ "name": "email", "checked": [ "fillable", "hidden" ] }
 const setColumns = async (currentColumns) => {
     const add = []
-    add.push(`DB::table('${props.selectedTable?.name}')->insert([`)
-    let selectedColumns = await currentColumns?.map(async (i, key) => {
-        let column  = getNameToColumns(i.name)
-        let checked = i.checked
-        let head = "\t"
-        let middle = ""
-        let end = ""
-        middle += `'${column.name}' => ${checked}${key + 1 == currentColumns.length ? '':','}`
-        add.push(`${head}${middle}${end}`)
-    });
-    // DB::table('users')->insert([
-    //         'name' => 'John Doe',
-    //         'email' => 'johndoe@example.com',
-    //         'password' => bcrypt('password'),
-    //     ]);
-    add.push(`]);`)
-    code.value = add?.join("\n")
+    add.push(`use HasFactory;`)
+    add.push(`protected $table = '${props.selectedTable?.name}';`)
 
+    if (currentColumns) {
+        // await currentColumns?.map(async (i, key) => {
+        //     console.log(i.name);
+        // });
+        
+        ModelSelect.map(selectValue => {
+            if (currentColumns.map(c => c.checked.includes(selectValue)).filter(i => i).length > 0) {
+                let columnArr = currentColumns.map(c => {
+                    if (c.checked.includes(selectValue)) {
+                        return c.name
+                    } 
+                }).filter(i => i);
+                
+
+                
+
+                // if (selectValue == "fillable") {
+                //     add.push(`protected $fillable = ['${columnArr.join(",")}'];`)
+                // }
+
+                // if (selectValue == "timestamps") {
+                //     add.push(`protected $primaryKey = true;`)
+                // }
+
+                if (valueArr.includes(selectValue)) {
+                    add.push(`protected $${selectValue} = ['${columnArr.join("','")}'];`)
+                }
+
+                if (valueBoolean.includes(selectValue)) {
+                    add.push(`protected $${selectValue} = true;`)
+                }
+
+                if (valuePrimary.includes(selectValue)) {
+                    add.push(`protected $${selectValue} = '${columnArr[0]}';`)
+                }
+
+            }
+        })
+    }
+    
+    
+    //add.push(``)
+    code.value = add?.join("\n")
 }
+
+
+//{ "name": "email", "checked": [ "fillable", "hidden" ] }
+// const setColumns = async (currentColumns) => {
+//     console.log(currentColumns);
+//     const add = []
+//     add.push(`use HasFactory;`)
+//     add.push(`protected $table = '${props.selectedTable?.name}';`)
+
+    
+//     let selectedColumns = await currentColumns?.map(async (i, key) => {
+//         let column  = getNameToColumns(i.name)
+//         let checked = i.checked
+//         let head = ""
+//         let middle = ""
+//         let end = ""
+
+//         // console.log(i.name, currentColumns.filter(x => x.name == i.name)?.[0]?.checked?.length);
+//         if (currentColumns.filter(x => x.name == i.name)?.[0]?.checked?.length > 0) {
+//             middle += `'${column.name}' => ${checked}${key + 1 == currentColumns.length ? "":","}`
+//             add.push(`${head}${middle}${end}`)
+//         }
+
+//     });
+
+    
+//     //add.push(``)
+//     code.value = add?.join("\n")
+// }
 
 
 const getNameToColumns = (name) => {
@@ -62,8 +120,8 @@ const article = computed(() => {
         },
         {
             type: 'match_column2',
-            selected: FactorySelect,
-            default: FactoryDefault
+            selected: ModelSelect,
+            default: ModelDefault
         },
         {
             type: 'code',
